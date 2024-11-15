@@ -8,14 +8,8 @@ dotenv.config();
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 
-export async function sendNewsletter(newsletter: string, rawStories: string) {
-  if (newsletter.length <= 750) {
-    console.log("Newsletter is too short to send. See newsletter below:");
-    console.log(newsletter);
-    console.log("Raw stories below:");
-    console.log(rawStories);
-    return "Newsletter not sent due to insufficient length.";
-  }
+export async function sendPodcast(podcast: string, rawStories: string) {
+
 
   try {
     const supabase = createClient(process.env.SUPABASE_URL!, process.env.SUPABASE_SECRET_KEY!);
@@ -33,11 +27,13 @@ export async function sendNewsletter(newsletter: string, rawStories: string) {
         throw new Error(`Failed to fetch subscribers: ${error.message}`);
       }
 
+      
+
       if (subscribers.length < batchSize) {
         hasMore = false;
       }
 
-      console.log(`Sending newsletter to ${subscribers.length} subscribers`);
+      console.log(`Sending podcast to ${subscribers.length} subscribers`);
 
       for (const subscriber of subscribers) {
         const unsubscribe_link = `https://www.aginews.io/api/unsubscribe?email=${subscriber.email}`;
@@ -45,8 +41,8 @@ export async function sendNewsletter(newsletter: string, rawStories: string) {
         await resend.emails.send({
           from: 'Eric <eric@tryfirecrawl.com>',
           to: subscriber.email,
-          subject: 'AGI News – Your Quick Daily Roundup',
-          html: newsletter + `<br><br><a href="${unsubscribe_link}">Unsubscribe</a>`,
+          subject: 'AGI News Podcast with Eric and Nick',
+          html: podcast + `<br><br><a href="${unsubscribe_link}">Unsubscribe</a>`,
         });
         
       }
