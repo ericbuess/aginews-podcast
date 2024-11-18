@@ -7,7 +7,6 @@ import OpenAI from 'openai';
 dotenv.config();
 
 const app = new FirecrawlApp({apiKey: process.env.FIRECRAWL_API_KEY});
-const fs = require('fs');
 
 export async function scrapeSources(sources: string[]) {
   const num_sources = sources.length;

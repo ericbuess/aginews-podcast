@@ -1,4 +1,4 @@
-# AGI News ✨
+# AGI News Podcast ✨
 
 AGI News is a daily AI newsletter that's completely sourced by autonomous AI agents.
 
