@@ -10,6 +10,8 @@ async function main() {
 }
 main();
 
+
+// If you want to run the cron job manually, uncomment the following line:
 //cron.schedule(`0 14 * * *`, async () => {
 //  console.log(`Starting process to send podcast...`);
 //  await handleCron();
