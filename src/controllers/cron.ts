@@ -11,7 +11,7 @@ export const handleCron = async (): Promise<void> => {
     const rawStoriesString = JSON.stringify(rawStories);
     const podcastScript = await generatePodcastScript(rawStoriesString);
     const podcastUrl = await generatePodcast(podcastScript);
-    const result = await sendPodcast(podcastUrl!, "eric@firecrawl.com");
+    const result = await sendPodcast(podcastUrl!, "enter email here");
     console.log(result);
   } catch (error) {
     console.error(error);
