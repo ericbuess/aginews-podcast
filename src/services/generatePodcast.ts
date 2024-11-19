@@ -17,7 +17,7 @@ export async function generatePodcast(podcastScript: string) {
           PlayHT.init({
             apiKey: process.env.PLAY_HT_API_KEY!,
             userId: process.env.PLAY_HT_USER_ID!,
-            defaultVoiceId: 's3://voice-cloning-zero-shot/9270311b-7879-4bef-bc44-03bc04785a59/original/manifest.json',
+            defaultVoiceId: 's3://voice-cloning-zero-shot/d0bea180-4042-4e75-9b3f-bbfb96428152/original/manifest.json',
             defaultVoiceEngine: 'PlayHT2.0',
           });
 

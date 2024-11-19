@@ -11,7 +11,7 @@ export async function sendPodcast(podcast_url: string, reciever_email: string) {
   try {
 
     await resend.emails.send({
-      from: 'Eric <eric@tryfirecrawl.com>',
+      from: 'Eric <ericbuess@gmail.com>',
       to: reciever_email,
       subject: 'AGI News Podcast with Eric',
       html: `Your podcast is ready to listen to: ` + podcast_url

@@ -15,7 +15,7 @@ export async function generatePodcastScript(rawStories: string) {
 
           const podcastScriptResponse = await together.chat.completions.create({
             model: "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo",
-            messages: [{ role: 'user', content: `Given a list of raw AI and LLM-related stories sourced from various platforms, create a podcast script for 'AGI News Podcast' featuring Eric, the co-founder of Firecrawl. The output format should be a 'script' object like this containing Eric's script:
+            messages: [{ role: 'user', content: `Given a list of raw AI and LLM-related stories sourced from various platforms, create a podcast script for 'AGI News Podcast' featuring Eric, the co-founder of aistartingpoint.dev. The output format should be a 'script' object like this containing Eric's script:
 
 {
   "podcast_script": "Podcast script here"
